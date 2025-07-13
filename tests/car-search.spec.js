@@ -13,12 +13,12 @@ test('Search car with calendar and verify results', async ({ page }) => {
   const returnDate = addDays(5);  // Today + 5
 
   console.log(`📅 Pickup: ${pickupDate}, Return: ${returnDate}`);
-  
+
   await findCar.fillDateAndTime({
     pickupDate,
     returnDate,
     pickupTime: '10:00',
-    returnTime: '12:00',
+    returnTime: '15:00',
   });
 
   await findCar.clickFindCar();
