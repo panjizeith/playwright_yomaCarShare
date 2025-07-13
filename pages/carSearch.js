@@ -73,6 +73,13 @@ export class FindCarPage {
             el.dispatchEvent(new Event('input', { bubbles: true }));
             el.dispatchEvent(new Event('change', { bubbles: true }));
           }, returnTime);
+          const filledPickupTime = await this.pickupTimeInput.inputValue();
+          const filledReturnTime = await this.returnTimeInput.inputValue();
+          console.log(`⏰ Pickup Time filled: ${filledPickupTime}`);
+          console.log(`⏰ Return Time filled: ${filledReturnTime}`);
+        
+          expect(filledPickupTime).toBe(pickupTime);
+          expect(filledReturnTime).toBe(returnTime);
       }
   
     async clickFindCar() {
